@@ -1,0 +1,50 @@
+public class ReverseNum {
+    public static  int reverse(int x) {
+        int num = x;
+        int res =0;
+        while(num!=0){
+        
+        int digit = x%10;
+         num = x/10;
+          if(res>Integer.MIN_VALUE && res<Integer.MAX_VALUE)
+        	  return 0;
+            res = 10*res+digit;
+            //return res;
+        }
+       // if(res>Integer.MIN_VALUE && res<Integer.MAX_VALUE)
+         return res;
+       
+      //   return 0;
+        
+    }
+}
+
+// reverse string
+
+import java.util.Scanner;
+
+public class ReverseString {
+
+	public static String reverseString(String str) {
+		
+		String[] s = str.split(" ");
+		int n = s.length;
+		String reverse = "";
+		for(int i=n-1 ; i>=0 ; i--) {
+			reverse = String.join(" ", reverse , s[i]);		
+		}
+		
+		reverse = reverse.trim();
+//		System.out.println("Reverse String is :- " + reverse);
+		return reverse;
+	}
+		public static void main(String[] args) {
+			
+			Scanner scn = new Scanner(System.in);
+			
+			System.out.println("Enter the string :-- ");
+			String str = scn.nextLine();
+			System.out.println("Reverse String is :- " + reverseString(str));
+		}		
+			
+}
